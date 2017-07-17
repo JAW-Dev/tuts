@@ -7,10 +7,20 @@ use Illuminate\Http\Request;
 use App\Post;
 
 class PostsController extends Controller
+
 {
+	
+	public function __construct()
+	
+	{
+		
+		$this->middleware('auth')->except(['index', 'show']);
+		
+	}
 	
 	
 	public function index()
+	
 	{
 		
 		$posts = Post::latest()->get();
@@ -20,6 +30,7 @@ class PostsController extends Controller
 	}
 	
 	public function show(Post $post)
+	
 	{
 		
 		return view('posts.show', compact('post'));
@@ -27,6 +38,7 @@ class PostsController extends Controller
 	}
 	
 	public function create()
+	
 	{
 		
 		return view('posts.create');
@@ -34,15 +46,24 @@ class PostsController extends Controller
 	}
 	
 	public function store()
+	
 	{
 		
 		$this->validate(request(), [
+			
 				'title' => 'required',
+				
 				'body'  => 'required',
+				
 		]);
-
-		Post::create(request(['title', 'body']));
+		
+		
+		auth()->user()->publish(
+			
+			new Post(request(['title', 'body']))
+		);
 		
 		return redirect('/');
 	}
+	
 }
