@@ -8,7 +8,7 @@
 		
 		<form method="POST" action="/register">
 			
-			{{ csrf_field() }}
+			{!! csrf_field() !!}
 			
 			<div class="form-group">
 				
