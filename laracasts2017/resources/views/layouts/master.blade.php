@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,20 +19,23 @@
 <body>
 
 	@include ('layouts.nav')
+
+	@if ($flash = session('message'))
+		<div id="flash-message" class="alert alert-success" role="alert">
+			{{ $flash }}
+		</div>
+	@endif
 	
 	@include ('layouts.header')
 	
 	<div class="container">
-
 		<div class="row">
 	
 			@yield('content')
 			
-				
 			@include ('layouts.sidebar')
 
 		</div><!-- /.row -->
-
 	</div><!-- /.container -->
 
 	@include ('layouts.footer')
