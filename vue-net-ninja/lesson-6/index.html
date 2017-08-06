@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Untitled</title>
+		
+		<link rel="stylesheet" href="lesson-6/styles.css">
+		<script src="https://unpkg.com/vue@2.4.2"></script>
+	</head>
+	<body>
+		
+		<div id="vue-app">
+			<h1>Events</h1>
+			<button v-on:click="add(1)">Add a Year</button>
+			<button v-on:click="subtract(1)">Subtract a Year</button>
+			<button v-on:dblclick="add(10)">Add 10 Years</button>
+			<button v-on:dblclick="subtract(10)">Subtract 10 Years</button>
+			<p>My age is {{age}}</p>
+			<div id="canvas" v-on:mousemove="updateXY">{{ x }}, {{ y }}</div>
+		</div>
+		
+		<script src="lesson-6/app.js"></script>
+	</body>
+</html>
