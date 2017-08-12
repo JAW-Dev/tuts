@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Untitled</title>
+		
+		<link rel="stylesheet" href="lesson-10/styles.css">
+		<script src="https://unpkg.com/vue@2.4.2"></script>
+	</head>
+	<body>
+		
+		<div id="vue-app">
+			<h1>Dynamic CSS</h1>
+			<h2>Example 1</h2>
+			<!-- <div v-on:click="available = !available" v-bind:class="{available: available}">
+				<span>Ryu</span>
+			</div> -->
+			<h2>Example 2</h2>
+			<button v-on:click="nearby = !nearby">Toggle Nearby</button>
+			<button v-on:click="available = !available">Toggle Available</button>
+			<div v-bind:class="compClasses">
+				<span>Ryu</span>
+			</div>
+		</div>
+		
+		<script src="lesson-10/app.js"></script>
+	</body>
+</html>

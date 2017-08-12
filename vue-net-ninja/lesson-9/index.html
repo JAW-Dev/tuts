@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Untitled</title>
+		
+		<link rel="stylesheet" href="lesson-9/styles.css">
+		<script src="https://unpkg.com/vue@2.4.2"></script>
+	</head>
+	<body>
+		
+		<div id="vue-app">
+			<h1>Computed Properties</h1>
+			<button v-on:click="a++">Add to A</button>
+			<button v-on:click="b++">Add to B</button>
+			<p>A - {{ a }}</p>
+			<p>B - {{ b }}</p>
+			
+			<p>Age + A = {{ addToA }}</p>
+			<p>Age + B = {{ addToB }}</p>
+		</div>
+		
+		<script src="lesson-9/app.js"></script>
+	</body>
+</html>

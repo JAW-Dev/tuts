@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Untitled</title>
+		
+		<link rel="stylesheet" href="lesson-12/styles.css">
+		<script src="https://unpkg.com/vue@2.4.2"></script>
+	</head>
+	<body>
+		
+		<div id="vue-app">
+			<h1>Looping through lists</h1>
+			<ul>
+				<li v-for="(character, index) in characters">{{ index }}. {{ character }}</li>
+			</ul>
+			<ul>
+				<li v-for="(ninja, index) in ninjas">{{ index }}. {{ ninja.name }} - {{ ninja.age }}</li>
+			</ul>
+			<template v-for="(ninja, index) in ninjas">
+				<h3>{{ index }}. {{ ninja.name }}</h3>
+				<p>{{ ninja.age }}</p>
+			</template>
+			<template v-for="ninja in ninjas">
+				<div v-for="(value,key) in ninja">
+					<p>{{ key }} - {{ value }}</p>
+				</div>
+			</template>
+		</div>
+		
+		<script src="lesson-12/app.js"></script>
+	</body>
+</html>
